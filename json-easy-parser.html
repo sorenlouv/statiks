@@ -63,14 +63,11 @@
     const message = document.getElementById('message');
     const output = document.getElementById('formattedOutput');
 
-
-
     input.addEventListener('input', () => {
       const text = input.value.trim();
       if (text) {
         try {
           let parsed;
-          debugger
           try {
             parsed = JSON.parse(text);
           } catch (e) {
