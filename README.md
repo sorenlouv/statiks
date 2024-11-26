@@ -1,0 +1,2 @@
+# statiks
+Static web projects
