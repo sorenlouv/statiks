@@ -94,15 +94,7 @@
             try {
               parsed = JSON.parse(text);
             } catch (e) {
-              parsed = JSON.parse(
-                text
-                  .replace(/\\"/g, '"')
-                  .replace(
-                    /([{,]\s*)([a-zA-Z_$][a-zA-Z0-9_$]*)\s*:/g,
-                    '$1"$2":'
-                  )
-                  .replace(/'([^']*?)'/g, '"$1"')
-              );
+              parsed = eval(`(${text})`);
             }
             formattedJson = JSON.stringify(parsed, null, 2); // Beautify JSON
             output.textContent = formattedJson;
